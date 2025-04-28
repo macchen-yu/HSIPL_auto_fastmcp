@@ -39,7 +39,7 @@ echo $HOME\.local\bin
 使用 Git 將專案下載至本地端：
 
 ```powershell
-git clone <專案網址>
+git clone https://github.com/macchen-yu/HSIPL_auto_fastmcp.git
 ```
 
 下載完成後，切換至專案資料夾：
