@@ -5,6 +5,7 @@
 - Node.js
 - Python 12
 - uv 套件管理器
+- Windsurf
 
 ---
 
@@ -34,7 +35,14 @@ echo $HOME\.local\bin
 
 ---
 
-## 3. 下載專案
+## 3.下載Windsurf
+
+前往 [Windsurf 官方網站](https://www.windsurf.io/) 下載安裝檔，安裝時請記得勾選 **"Add to PATH"** 選項。
+
+
+---
+
+## 4. 下載專案
 
 使用 Git 將專案下載至本地端：
 
@@ -50,7 +58,7 @@ cd HSIPL_fastmcp
 
 ---
 
-## 4. 安裝 `server.py`
+## 5. 安裝 `server.py`
 
 在 **全局環境**（非虛擬環境）中先安裝 server 相關依賴：
 
@@ -62,7 +70,7 @@ uv run fastmcp install server.py
 
 ---
 
-## 5. 設定 `mcpServers` 配置
+## 6. 設定 `mcpServers` 配置
 
 建立或修改設定檔（例如 `openwebui` 需要的 `openwebui.json`）：
 
@@ -84,7 +92,7 @@ uv run fastmcp install server.py
 
 ---
 
-## 6. 除錯開發 MCP Server
+## 7. 除錯開發 MCP Server
 
 啟動 server 端服務器進行開發模式：
 
@@ -113,8 +121,4 @@ Set up MCP proxy
 - [oalieno - MCP 架設教學](https://oalieno.tw/posts/mcp)
 - [MCP 官方教學（miniasp 部落格）](https://blog.miniasp.com/post/2025/04/01/Write-your-own-MCP-server-using-uv-and-Python?full=1&fbclid=IwZXh0bgNhZW0CMTEAAR5BtEA-3IpXHd7eI9290Bu_P-TOSgAhOUnEfg1-uOfewPD7xgx1jBPaJdMMWQ_aem_IO-VzLI0yv-h0O69sOEvqg)
 
----
-
-這版可以直接貼進你的 README.md，用在 GitHub 或文件網站上都很乾淨。
-
-要不要順便也幫你整理一版「中英文對照版」？如果要，我可以快速補給你。要不要一起？🚀
+- [fastmcp](https://github.com/jlowin/fastmcp.git)
