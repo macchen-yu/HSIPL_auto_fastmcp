@@ -10,4 +10,3 @@ wheels/
 .venv
 *.npy
 *.jpg
-*.png
