@@ -12,50 +12,60 @@
 
 在 PowerShell 中執行以下指令以安裝 uv：
 
-```shell
+```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-如果安裝 uv 後出現 `找不到 uv` 的錯誤，可以執行以下命令臨時新增路徑環境變數：
+如果安裝 uv 後出現 `找不到 uv` 的錯誤，可以臨時新增路徑環境變數：
 
-```shell
-echo $HOME\.local\bin;$env
+```powershell
+echo $HOME\.local\bin
 ```
-將文字手動新增到環境變量
+
+**複製上方顯示的路徑**，並手動將其新增到系統環境變數中。
+
 ---
 
 ## 2. 安裝 Node.js
 
-前往 [Node.js 官方網站](https://nodejs.org/en) 下載安裝檔，安裝時請勾選「Add to PATH」選項：
+前往 [Node.js 官方網站](https://nodejs.org/en) 下載安裝檔，安裝時請記得勾選 **"Add to PATH"** 選項。
 
 ![Node.js 安裝畫面](./pic/nodejs_install.png)
 
 ---
 
-
-
 ## 3. 下載專案
 
 使用 Git 將專案下載至本地端：
 
-```shell
+```powershell
 git clone <專案網址>
 ```
 
 下載完成後，切換至專案資料夾：
 
-```shell
+```powershell
 cd HSIPL_fastmcp
 ```
 
 ---
 
-## 4. 安裝server.py
+## 4. 安裝 `server.py`
 
-uv run fastmcp install server.py  # 這個要在全局環境裡面先安裝!!!!!!
+在 **全局環境**（非虛擬環境）中先安裝 server 相關依賴：
+
+```powershell
+uv run fastmcp install server.py
+```
+
+⚠️ 注意：**必須在全局環境下執行**！
 
 ---
-設定檔json
+
+## 5. 設定 `mcpServers` 配置
+
+建立或修改設定檔（例如 `openwebui` 需要的 `openwebui.json`）：
+
 ```json
 {
   "mcpServers": {
@@ -65,24 +75,20 @@ uv run fastmcp install server.py  # 這個要在全局環境裡面先安裝!!!!!
         "run",
         "fastmcp",
         "run",
-        "c:/Users/User/Desktop/HSIPL_fastmcp/server.py"  # 這裡要改成你的專案路徑
+        "c:/Users/User/Desktop/HSIPL_fastmcp/server.py"  // 這裡請改成你的實際路徑
       ]
     }
   }
 }
-
-
 ```
 
+---
 
+## 6. 除錯開發 MCP Server
 
+啟動 server 端服務器進行開發模式：
 
-
-## 5. 除錯開發 MCP Server
-
-啟動 server 端服務器：
-
-```shell
+```powershell
 uv run fastmcp dev server.py
 ```
 
@@ -98,14 +104,17 @@ Set up MCP proxy
 🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
 ```
 
-可透過瀏覽器開啟 [http://127.0.0.1:6274](http://127.0.0.1:6274) 查看 MCP Inspector。
+你可以透過瀏覽器開啟 [http://127.0.0.1:6274](http://127.0.0.1:6274) 來查看 **MCP Inspector**。
 
 ---
-
-
 
 ## 參考資料
 
 - [oalieno - MCP 架設教學](https://oalieno.tw/posts/mcp)
 - [MCP 官方教學（miniasp 部落格）](https://blog.miniasp.com/post/2025/04/01/Write-your-own-MCP-server-using-uv-and-Python?full=1&fbclid=IwZXh0bgNhZW0CMTEAAR5BtEA-3IpXHd7eI9290Bu_P-TOSgAhOUnEfg1-uOfewPD7xgx1jBPaJdMMWQ_aem_IO-VzLI0yv-h0O69sOEvqg)
 
+---
+
+這版可以直接貼進你的 README.md，用在 GitHub 或文件網站上都很乾淨。
+
+要不要順便也幫你整理一版「中英文對照版」？如果要，我可以快速補給你。要不要一起？🚀
