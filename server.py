@@ -13,12 +13,14 @@ mcp = FastMCP("hsipl_autotool", timeout=300000)
 import src.hsipl_autotool.hsi_tools as hsi_tools
 import src.hsipl_autotool.hsi_plot as hsi_plot
 import src.hsipl_autotool.fast_sam as fast_sam
-# import src.sam_stream as sam_stream  # 有的話也可以
+import src.hsipl_autotool.transraw as transraw
+
 
 hsi_tools.register_tools(mcp)
 hsi_plot.register_tools(mcp)
 fast_sam.register_tools(mcp)
-# sam_stream.register_tools(mcp)
+transraw.register_tools(mcp)
+
 
 # 確保資料夾存在
 HSI_DATA_FOLDER = os.path.join(os.path.dirname(__file__), "hsi_data")

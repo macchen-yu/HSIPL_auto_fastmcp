@@ -3,7 +3,7 @@
 本教學將指引你在 **Windows PowerShell** 上安裝必要環境，包括：
 
 - Node.js
-- Python 12
+- Python 12  環境必須單一個
 - uv 套件管理器
 - Windsurf
 
@@ -64,6 +64,8 @@ cd HSIPL_fastmcp
 
 ```powershell
 uv run fastmcp install server.py
+pip install fastmcp   #非常關鍵的步驟
+pip install spectral
 ```
 
 ⚠️ 注意：**必須在全局環境下執行**！
